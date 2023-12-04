@@ -7,7 +7,6 @@ function App() {
       <>
         <h1>Countries</h1>
         < CountryContainer />
-
       </>
   );
 }

@@ -1,11 +1,19 @@
-const CountryComponent = ({country}) => {
+const CountryComponent = ({country,onHandleCheckBox}) => {
+
+    const onCheckBoxClick = () => {
+        // console.log(country)
+        onHandleCheckBox(country)
+    }
+
+
 
 return (
        
        <>
-
-       {/* also need to add checkbox */}
-       <p><b>Country:</b>{country.name.common} {country.flag}</p>
+       <li>
+        <b>Country:</b>{country.name.common} {country.flag}
+        <input type="checkbox" onChange={onCheckBoxClick}></input>
+       </li>
        </>
 
 )
