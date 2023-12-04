@@ -31,16 +31,17 @@ const CountryContainer = () => {
      useEffect(() => {
 
         // logic to remove country thats been visited
-        const updatedCountryList = countries.filter((country) => !visitedCountries.includes(country))
+        const updatedCountryList = countries.filter((selectedCountry) => !visitedCountries.includes(selectedCountry))
         setCountries(updatedCountryList);
         },[visitedCountries])
 
     return ( 
-         <>
-         <h2>Display all countries</h2>
+         <div id = "">
+         <h2 >Display all countries</h2>
          {countries ?<CountryList countries = {countries} onHandleCheckBox = {handleCheckBox}/> : <p>loading countries ..</p> }
+         <h2>Display Visited Countries</h2>
         <VisitedCountryList visitedCountries={visitedCountries} />
-         </>
+         </div>
 
      );
 

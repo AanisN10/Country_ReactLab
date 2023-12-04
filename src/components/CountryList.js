@@ -11,9 +11,10 @@ const CountryList = ({countries, onHandleCheckBox}) => {
         
         return ( 
 
+            <div className="country-list">
+            <h3> Country I need to explore....</h3>
             <ul>{displayCountries}</ul>
-
-    
+            </div>
     
          );
      
