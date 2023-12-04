@@ -20,17 +20,20 @@ const CountryContainer = () => {
 
      } , []);
 
-    //   updating the visitedCountries when checkbox is clicked 
-     const handleCheckBox = (selectedCountry) => {
-        // console.log(Country)
-        setVisitedCountries((visitedCountries) => [...visitedCountries,selectedCountry])
+    //updating the visitedCountries when checkbox is clicked 
+    // spread operator to add/update country to visited list
+    // iterate using filter and if the country is in visitedList remove from the countryList
 
-    
-        
-     }
+     const handleCheckBox = ((countrySelected) => {
+            setVisitedCountries((visitedCountries)=> [...visitedCountries,countrySelected])
+     })
 
-     
+     useEffect(() => {
 
+        // logic to remove country thats been visited
+        const updatedCountryList = countries.filter((country) => !visitedCountries.includes(country))
+        setCountries(updatedCountryList);
+        },[visitedCountries])
 
     return ( 
          <>
@@ -40,6 +43,11 @@ const CountryContainer = () => {
          </>
 
      );
+
+
+
+
+    
 }
  
 export default CountryContainer;
